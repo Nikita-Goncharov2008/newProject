@@ -1,38 +1,100 @@
-.App {
+body{
+  margin: 0 ;
+  padding: 0;
+  background-color: rgb(255, 203, 138);
+  color: rgb(71, 39, 0);
+}
+
+button, input{
+  border: none;
+  outline: none;
+}
+button, input:focus{
+  border:none;
+  outline: none;
+}
+
+button, input:active{
+  border: none;
+  outline: none;
+}
+
+.container{
+  width: 100%;
+  max-width: 1500px;
+  margin:0 auto;
+  display: grid;
+  grid-template-areas: "h h"
+                        "n p";
+  gap:15px ;
+  grid-template-columns: 3fr 9fr;
+}
+
+.container div{
+  background-color: rgb(255, 235, 212);
+  border-radius: 1em;
+}
+
+.header{
+  padding: 15px;
+  grid-area: h;
+}
+
+.navbar{
+  grid-area: n;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.profile{
+  grid-area: p;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.navbar__links{
+  display: block;
+  text-decoration: none;
+  color: rgb(71, 39, 0);
+  font-size: 24px;
+  margin: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.userInfo{
+  display: flex;
+  margin: 60px 0 20px;
+}
+.profile{
+  padding: 10px;
+}
+.userInfo h3{
+  margin: 0 ;
+  font-size: 42px;
+}
+.userInfo p{
+  margin: 0;
+  align-self: flex-end;
+  font-weight: 700;
+}
+form{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 30%;
 }
 
-.App-link {
-  color: #61dafb;
+form button, input{
+  color: #4a2704;
+  text-align: center;
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button{
+  background-color: #ff8668;
+}
+
+form h2{
+  font-size: 48px;
+}
+
+.postInfo p{
+  font-size: 18px;
+  margin: 0 0 0 20px ;
 }
