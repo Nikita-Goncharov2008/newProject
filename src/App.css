@@ -98,3 +98,53 @@ form h2{
   font-size: 18px;
   margin: 0 0 0 20px ;
 }
+
+.message{
+  border-radius: 0px!important ;
+  border: 3px solid #ff8668;
+}
+.comment{
+  margin-left: 30px;
+}
+
+.dialog{
+  display: flex;
+  justify-content: center
+}
+
+.blockChats{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.chats{
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blockMassage{
+  
+  width: 50%;
+}
+
+.blockMassage form{
+  margin: 0 auto;
+}
+
+.blockMassage form input,button{
+    width: 100%;
+}
+
+.form{
+  max-width: 100%;
+  width: 100%;
+
+}
+
+.form input,button{
+  width: 100%;
+  padding: 0;
+}
