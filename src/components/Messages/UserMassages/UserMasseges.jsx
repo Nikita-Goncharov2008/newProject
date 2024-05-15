@@ -1,11 +1,17 @@
 import React from 'react';
 import Massage from './Massage';
+
+let diologsNames=[
+    {text:'Привет, как дела?', id:1},
+    {text:'Го завтра на марс?', id:2},
+    {text:'Жду мой чип', id:3}
+]
 const UserMasseges = () => {
     return (
         <div className="usersMassages">
-            <Massage msg = 'Привет, как дела?'/>
-            <Massage msg = 'Го завтра на марс?'/>
-            <Massage msg = 'Жду мой чип'/>
+            {
+                diologsNames.map(item=><Massage id={item.id} msg = {item.text}/>)
+            }
         </div>
     );
 }

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const ChatName = (props) => {
     return (
-        <NavLink to={`/messages/${props.id}`} >{props.name}</NavLink>
+        <NavLink id={props.id} to={`/messages/${props.id}`} >{props.name}</NavLink>
     );
 }
 
