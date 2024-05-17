@@ -1,7 +1,8 @@
 import React from 'react';
 import Post from './Post';
+   
 
-const Posts = () => {
+const Posts = (props) => {
     return (
         <>
             <form action="#">
@@ -10,19 +11,9 @@ const Posts = () => {
                 <button>Add Post </button>
             </form>
             <div className="posts">
-                <Post userName="tolya" postText="hi"/>
-                <Post userName="glasha" postText="h"/>
-                <Post userName="sveta" postText="a"/>
-                <Post userName="stepa" postText="a"/>
-                <Post userName="d" postText="z"/>
-                <Post userName="a" postText="x"/>
-                <Post userName="f" postText="c"/>
-                <Post userName="g" postText="b"/>
-                <Post userName="b" postText="v"/>
-                <Post userName="x" postText="b"/>
-                <Post userName="z" postText="n"/>
-                <Post userName="v" postText="m"/>
-                <Post userName="n" postText=","/>
+                {props.postProp.map(item=><Post userName={item.name} postText={item.text}/>)}
+                
+                
             </div>
         </>
     );

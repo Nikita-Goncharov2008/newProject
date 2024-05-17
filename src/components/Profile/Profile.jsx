@@ -2,7 +2,7 @@ import React from 'react';
 import userImage from '../../img/userImage.png'
 import Posts from './posts/Posts';
 
-const Profile = () => {
+const Profile = (props) => {
     return (
         <div className='profile'>
             <div className="userInfo">
@@ -10,7 +10,7 @@ const Profile = () => {
                 <h3>User Name</h3>
             </div>
             
-            <Posts/>
+            <Posts postProp={props.postProp}/>
         </div>
     );
 }

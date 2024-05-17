@@ -1,15 +1,20 @@
 import React from 'react';
-import Massage from './UserMassages/Massage';
 import Chats from './ChatBox/Сhats'
 import UserMasseges from './UserMassages/UserMasseges';
-const Messages = () => {
+
+
+
+
+
+const Messages = (props) => {
     return (
         <div className='dialog'>
             <div className="blockChats">
-                <Chats/>
+                <Chats chatNames = {props.chatNames}/>
             </div>
+            
             <div className='blockMassage'> 
-                <UserMasseges/>
+                <UserMasseges diologsNames={props.diologsNames}/>
                 <form className="form" action="#">
                     <input type="text" placeholder='Введите сообщение'/>
                     <button className='sendButton'>отправить</button>
