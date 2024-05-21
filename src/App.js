@@ -4,7 +4,7 @@ import NavBar from './components/NavBar/NavBar';
 import Profile from './components/Profile/Profile';
 import Messages from './components/Messages/Dialogs';
 import { Route, Routes } from 'react-router-dom';
-import Massage from './components/Messages/UserMassages/Massage';
+// import Massage from './components/Messages/UserMassages/Massage';
 
 function App(props) {
   return (
@@ -12,12 +12,15 @@ function App(props) {
       <Header/>
       <NavBar/>
       <Routes>
-        <Route path='/'element={<Profile postProp={props.postProp}/>}/>
-        <Route path='/profile' element={<Profile postProp={props.postProp}/>}/>
-        <Route path='/messages' element={<Messages diologsNames={props.diologsNames} chatNames={props.chatNames}/>} />
+        <Route path='/'element={<Profile ProfilePage={props.data.ProfilePage}/>}/>
+        <Route path='/profile' element={<Profile ProfilePage={props.data.ProfilePage}/>}/>
+        <Route path='/messages' element={<Messages DioalogsPage={props.data.DioalogsPage}/>} />
       </Routes>
 
     </div>
   );
 }
 export default App;
+
+
+// сделать dialogsPage из data
