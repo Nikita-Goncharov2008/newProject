@@ -1,4 +1,4 @@
-
+import {rendering} from '../render'
 let Data={
     ProfilePage:{
         postProp:[
@@ -23,7 +23,8 @@ export let makePost = (text)=>{
     let newPosts={
         name:'User Name ',text:text
     }
-    Data.ProfilePage.postProp.push(newPosts)
+    Data.ProfilePage.postProp.unshift(newPosts)
+    rendering(Data)
     console.log(Data.ProfilePage.postProp)
 }
 export default Data
