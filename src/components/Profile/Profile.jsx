@@ -10,7 +10,7 @@ const Profile = (props) => {
                 <h3>User Name</h3>
             </div>
             
-            <Posts postProp={props.ProfilePage.postProp}/>
+            <Posts makePost={props.makePost} postProp={props.ProfilePage.postProp}/>
         </div>
     );
 }

@@ -1,4 +1,3 @@
-import Profile from "../components/Profile/Profile"
 
 let Data={
     ProfilePage:{
@@ -20,5 +19,11 @@ let Data={
         ]
     }
 }
-
+export let makePost = (text)=>{
+    let newPosts={
+        name:'User Name ',text:text
+    }
+    Data.ProfilePage.postProp.push(newPosts)
+    console.log(Data.ProfilePage.postProp)
+}
 export default Data

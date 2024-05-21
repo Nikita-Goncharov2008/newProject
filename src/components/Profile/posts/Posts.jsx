@@ -1,14 +1,18 @@
 import React from 'react';
 import Post from './Post';
    
+let postText = React.createRef()
 
 const Posts = (props) => {
+    function inovation(){
+        props.makePost(postText.current.value)
+    }
     return (
         <>
             <form action="#">
                 <h2>My posts</h2>
-                <input type="text" placeholder='type text of your posts'/>
-                <button>Add Post </button>
+                <input ref = {postText} type="text" placeholder='type text of your posts'/>
+                <button onClick={inovation} >Add Post </button>
             </form>
             <div className="posts">
                 {props.postProp.map(item=><Post userName={item.name} postText={item.text}/>)}

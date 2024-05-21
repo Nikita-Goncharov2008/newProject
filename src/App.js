@@ -12,8 +12,8 @@ function App(props) {
       <Header/>
       <NavBar/>
       <Routes>
-        <Route path='/'element={<Profile ProfilePage={props.data.ProfilePage}/>}/>
-        <Route path='/profile' element={<Profile ProfilePage={props.data.ProfilePage}/>}/>
+        <Route path='/'element={<Profile ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
+        <Route path='/profile' element={<Profile ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
         <Route path='/messages' element={<Messages DioalogsPage={props.data.DioalogsPage}/>} />
       </Routes>
 
