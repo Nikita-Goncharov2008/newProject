@@ -17,7 +17,7 @@ let Data={
         {text:'Го завтра на марс?', id:2},
         {text:'Жду мой чип', id:3}
         ]
-    }
+    },
 }
 export let makePost = (text)=>{
     let newPosts={
@@ -27,4 +27,15 @@ export let makePost = (text)=>{
     rendering(Data)
     console.log(Data.ProfilePage.postProp)
 }
+
+export let sendMassege = (text)=>{
+    let id=4
+    let newMassage={
+        text:text, id:id,
+    }
+    id++
+    Data.DioalogsPage.diologsNames.push(newMassage)
+    rendering(Data)
+}
+
 export default Data

@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import {makePost} from './data/Data'
+import {makePost, sendMassege} from './data/Data'
 
 
 
@@ -13,7 +13,7 @@ export let rendering=(Data)=>{
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App data={Data} makePost={makePost}/>
+      <App data={Data} sendMassege={sendMassege} makePost={makePost}/>
     </React.StrictMode>
   </BrowserRouter>
 );
