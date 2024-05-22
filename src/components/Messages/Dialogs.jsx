@@ -6,6 +6,11 @@ let postMassege = React.createRef()
 
 
 const Messages = (props) => {
+
+    let rerenderMasseges = ()=>{
+        props.rerenderMasseges(postMassege.current.value)
+    }
+
     let newPost =()=>{
         props.sendMassege(postMassege.current.value)
         postMassege.current.value=''
@@ -19,7 +24,7 @@ const Messages = (props) => {
             <div className='blockMassage'> 
                 <UserMasseges diologsNames={props.DioalogsPage.diologsNames}/>
                 <form className="form" action="#">
-                    <input ref={postMassege} type="text" placeholder='Введите сообщение'/>
+                    <input onChange={rerenderMasseges} value={props.newMassage} ref={postMassege} type="text" placeholder='Введите сообщение'/>
                     <button onClick={newPost} className='sendButton'>отправить</button>
                 </form>
             </div>

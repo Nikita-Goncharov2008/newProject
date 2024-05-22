@@ -12,9 +12,9 @@ function App(props) {
       <Header/>
       <NavBar/>
       <Routes>
-        <Route path='/'element={<Profile ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
-        <Route path='/profile' element={<Profile ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
-        <Route path='/messages' element={<Messages DioalogsPage={props.data.DioalogsPage} sendMassege={props.sendMassege}/>} />
+        <Route path='/'element={<Profile rerenderUI={props.rerenderUI} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} makePost={props.makePost}/>}/>
+        <Route path='/profile' element={<Profile rerenderUI={props.rerenderUI} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
+        <Route path='/messages' element={<Messages newMassage={props.data.DioalogsPage.newMassage} rerenderMasseges={props.rerenderMasseges} DioalogsPage={props.data.DioalogsPage} sendMassege={props.sendMassege}/>} />
       </Routes>
 
     </div>

@@ -10,7 +10,7 @@ const Profile = (props) => {
                 <h3>User Name</h3>
             </div>
             
-            <Posts makePost={props.makePost} postProp={props.ProfilePage.postProp}/>
+            <Posts rerenderUI={props.rerenderUI} newPostText={props.newPostText} makePost={props.makePost} postProp={props.ProfilePage.postProp}/>
         </div>
     );
 }
