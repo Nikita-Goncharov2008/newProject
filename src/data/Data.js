@@ -1,4 +1,3 @@
-import {rendering} from '../render'
 let Data={
     ProfilePage:{
         newPostText:'hello',
@@ -19,7 +18,14 @@ let Data={
         {text:'Го завтра на марс?', id:2},
         {text:'Жду мой чип', id:3}
         ]
-    },
+    },NavBarPart:{
+        friends:[
+            {img:'../img/profileimages/profile1.png', name:'Tolya', id:1},
+            {img:'../img/personIco.webp', name:'Galya', id:2},
+            {img:'', name:'Kirill', id:3},
+            {img:'', name:'Natashka', id:4}
+        ]
+    }
 }
 export let makePost = (text)=>{
     let newPosts={
@@ -52,12 +58,12 @@ export let rerenderMasseges = (text) =>{
     rendering(Data)
 }
 
+export let subscribe=(watcher)=>{
+    rendering=watcher 
+}
+
+export let rendering= ()=>{
+    console.log('это фейк!!!')
+}
+
 export default Data
-
-
-
-
-
-
-
-

@@ -1,5 +1,5 @@
 import React from 'react';
-import userImage from '../../img/userImage.png'
+import userImage from '../../img/profileimages/profile1.png'
 import Posts from './posts/Posts';
 
 const Profile = (props) => {

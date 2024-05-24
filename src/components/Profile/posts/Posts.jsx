@@ -17,7 +17,7 @@ const Posts = (props) => {
     }
     return (
         <>
-            <form>
+            <form action='#'>
                 <h2>My posts</h2>
                 <input onChange={rerenderUi} value={props.newPostText} ref = {postText} type="text" placeholder='type text of your posts'/>
                 <button onClick={inovation}>Add Post </button>

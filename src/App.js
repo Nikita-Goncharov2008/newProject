@@ -10,7 +10,7 @@ function App(props) {
   return (
     <div className='container'>
       <Header/>
-      <NavBar/>
+      <NavBar friends={props.data.NavBarPart.friends}/>
       <Routes>
         <Route path='/'element={<Profile rerenderUI={props.rerenderUI} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} makePost={props.makePost}/>}/>
         <Route path='/profile' element={<Profile rerenderUI={props.rerenderUI} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>

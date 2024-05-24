@@ -105,7 +105,7 @@ form h2{
   border: 3px solid #ff8668;
 }
 .comment{
-  margin-left: 30px;
+  margin:  30px;
   word-wrap: break-word;
 }
 
@@ -149,4 +149,15 @@ form h2{
 .form input,button{
   width: 100%;
   padding: 0;
+}
+
+.flowersOfSomeonesLive{
+  display: flex;
+  gap: 10px ;
+  flex-wrap: wrap;
+}
+
+.card{
+  width: 30%;
+  border: 1px solid black ;
 }
