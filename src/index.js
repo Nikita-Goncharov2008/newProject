@@ -13,7 +13,7 @@ export let rendering=(Data)=>{
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App data={store._Data} rerenderMasseges={store.rerenderMasseges.bind(store)} rerenderUI={store.rerenderUI.bind(store)} sendMassege={store.sendMassege.bind(store)} makePost={store.makePost.bind(store)}/>
+      <App data={store._Data} rerenderMasseges={store.rerenderMasseges.bind(store)} sendMassege={store.sendMassege.bind(store)} dispatch={store.dispatch.bind(store)}/>
     </React.StrictMode>
   </BrowserRouter>
 );

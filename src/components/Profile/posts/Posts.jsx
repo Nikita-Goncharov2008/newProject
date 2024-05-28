@@ -3,16 +3,20 @@ import Post from './Post';
    
 let postText = React.createRef()
 
+
+
 const Posts = (props) => {
 
+    
+
     let rerenderUi = ()=>{
-        props.rerenderUI(postText.current.value)
+        props.dispatch({type:'INPUT-CHANGE', text:postText.current.value})
     }
 
     function inovation(){
         if(postText.current.value!==''){
-            props.makePost(postText.current.value)
-            postText.current.value=''
+            props.dispatch({type:'MAKE-POST'})
+                postText.current.value=''
         }
     }
     return (

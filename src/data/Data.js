@@ -1,3 +1,5 @@
+import { act } from "react"
+
 let store={
         _Data:{
         ProfilePage:{
@@ -26,6 +28,21 @@ let store={
                 {img:'', name:'Kirill', id:3},
                 {img:'', name:'Natashka', id:4}
             ]
+        }
+    },
+
+    dispatch(action){
+        if(action.type=='MAKE-POST'){
+            let newPosts={
+                name:'User Name ',text:this._Data.ProfilePage.newPostText
+            }
+            this._Data.ProfilePage.postProp.unshift(newPosts)
+            this._Data.ProfilePage.newPostText=''
+            this.rendering(this._Data)
+            console.log(this._Data.ProfilePage.postProp)
+        }else if(action.type=='INPUT-CHANGE'){
+            this._Data.ProfilePage.newPostText = action.text
+            this.rendering(this._Data)
         }
     },
 

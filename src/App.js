@@ -12,8 +12,8 @@ function App(props) {
       <Header/>
       <NavBar friends={props.data.NavBarPart.friends}/>
       <Routes>
-        <Route path='/'element={<Profile rerenderUI={props.rerenderUI} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} makePost={props.makePost}/>}/>
-        <Route path='/profile' element={<Profile rerenderUI={props.rerenderUI} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} makePost={props.makePost}/>}/>
+        <Route path='/'element={<Profile dispatch={props.dispatch} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} />}/>
+        <Route path='/profile' element={<Profile dispatch={props.dispatch} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} />}/>
         <Route path='/messages' element={<Messages newMassage={props.data.DioalogsPage.newMassage} rerenderMasseges={props.rerenderMasseges} DioalogsPage={props.data.DioalogsPage} sendMassege={props.sendMassege}/>} />
       </Routes>
 
