@@ -1,11 +1,10 @@
 import React from 'react';
-import Data from './data/Data';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import {makePost, sendMassege, rerenderUI, rerenderMasseges, subscribe} from './data/Data'
+import store from './data/Data'
 
 
 
@@ -14,14 +13,14 @@ export let rendering=(Data)=>{
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App data={Data} rerenderMasseges={rerenderMasseges} rerenderUI={rerenderUI} sendMassege={sendMassege} makePost={makePost}/>
+      <App data={store._Data} rerenderMasseges={store.rerenderMasseges.bind(store)} rerenderUI={store.rerenderUI.bind(store)} sendMassege={store.sendMassege.bind(store)} makePost={store.makePost.bind(store)}/>
     </React.StrictMode>
   </BrowserRouter>
 );
 }
 
-rendering(Data)
+rendering(store.getState())
 
-subscribe(rendering)   
+store.subscribe(rendering)   
 
 reportWebVitals();
