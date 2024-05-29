@@ -14,7 +14,7 @@ function App(props) {
       <Routes>
         <Route path='/'element={<Profile dispatch={props.dispatch} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} />}/>
         <Route path='/profile' element={<Profile dispatch={props.dispatch} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} />}/>
-        <Route path='/messages' element={<Messages newMassage={props.data.DioalogsPage.newMassage} rerenderMasseges={props.rerenderMasseges} DioalogsPage={props.data.DioalogsPage} sendMassege={props.sendMassege}/>} />
+        <Route path='/messages' element={<Messages dispatch={props.dispatch} newMassage={props.data.DioalogsPage.newMassage} DioalogsPage={props.data.DioalogsPage} />} />
       </Routes>
 
     </div>

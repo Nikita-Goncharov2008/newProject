@@ -1,21 +1,20 @@
 import React from 'react';
 import Post from './Post';
-   
+import { actionCreator } from '../../../data/Data';
+import { actionCreatorRerender } from '../../../data/Data';
 let postText = React.createRef()
 
 
 
 const Posts = (props) => {
 
-    
-
     let rerenderUi = ()=>{
-        props.dispatch({type:'INPUT-CHANGE', text:postText.current.value})
+        props.dispatch(actionCreatorRerender(postText.current.value))
     }
 
     function inovation(){
         if(postText.current.value!==''){
-            props.dispatch({type:'MAKE-POST'})
+            props.dispatch(actionCreator())
                 postText.current.value=''
         }
     }

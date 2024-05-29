@@ -8,11 +8,11 @@ let postMassege = React.createRef()
 const Messages = (props) => {
 
     let rerenderMasseges = ()=>{
-        props.rerenderMasseges(postMassege.current.value)
+        props.dispatch({type:'RERENDER-MASSEGES', text:postMassege.current.value})
     }
 
     let newPost =()=>{
-        props.sendMassege(postMassege.current.value)
+        props.dispatch({type:'SEND-MASSEGE'})
         postMassege.current.value=''
     }
     return (

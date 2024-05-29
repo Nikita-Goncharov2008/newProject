@@ -1,5 +1,7 @@
-import { act } from "react"
-
+const MAKE_POST ="MAKE-POST"
+const INPUT_CHANGE="INPUT-CHANGE"
+const SEND_MASSEGE="SEND-MASSEGE"
+const RERENDER_MASSEGES="RERENDER-MASSEGES"
 let store={
         _Data:{
         ProfilePage:{
@@ -32,7 +34,7 @@ let store={
     },
 
     dispatch(action){
-        if(action.type=='MAKE-POST'){
+        if(action.type==='MAKE-POST'){
             let newPosts={
                 name:'User Name ',text:this._Data.ProfilePage.newPostText
             }
@@ -40,8 +42,20 @@ let store={
             this._Data.ProfilePage.newPostText=''
             this.rendering(this._Data)
             console.log(this._Data.ProfilePage.postProp)
-        }else if(action.type=='INPUT-CHANGE'){
+        }else if(action.type==='INPUT-CHANGE'){
             this._Data.ProfilePage.newPostText = action.text
+            this.rendering(this._Data)
+        }else if(action.type==='SEND-MASSEGE'){
+            let id=4
+            let newMassage={
+                text:this._Data.DioalogsPage.newMassage, id:id,
+            }
+            id++
+            this._Data.DioalogsPage.diologsNames.push(newMassage)
+            this._Data.DioalogsPage.newMassage=''
+            this.rendering(this._Data)
+        }else if(action.type==='RERENDER-MASSEGES'){
+            this._Data.DioalogsPage.newMassage=action.text
             this.rendering(this._Data)
         }
     },
@@ -53,44 +67,19 @@ let store={
     rendering(){
         console.log('это фейк!!!')
     },
-
-    makePost(text){
-        let newPosts={
-            name:'User Name ',text:text
-        }
-        this._Data.ProfilePage.postProp.unshift(newPosts)
-        this._Data.ProfilePage.newPostText=''
-        this.rendering(this._Data)
-        console.log(this._Data.ProfilePage.postProp)
-    },
-    
-    sendMassege(text){
-        let id=4
-        let newMassage={
-            text:text, id:id,
-        }
-        id++
-        this._Data.DioalogsPage.diologsNames.push(newMassage)
-        this._Data.DioalogsPage.newMassage=''
-        this.rendering(this._Data)
-    },
-    
-    rerenderUI(text){
-        this._Data.ProfilePage.newPostText = text
-        this.rendering(this._Data)
-    },
-    
-    rerenderMasseges(text){
-        this._Data.DioalogsPage.newMassage=text
-        this.rendering(this._Data)
-    },
     
     subscribe(watcher){
         this.rendering=watcher 
     },
     
+}
 
-    
+export let actionCreator = ()=>{
+    return{type:MAKE_POST}
+}
+
+export let actionCreatorRerender = (text)=>{
+    return {type:INPUT_CHANGE, text:text}
 }
 export default store
 
