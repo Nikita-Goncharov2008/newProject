@@ -10,7 +10,7 @@ const NavBar = (props) => {
             <NavLink className="navbar__links" to='/messages'>Messages</NavLink>
             <NavLink className="navbar__links" to='/users'>Users</NavLink>
 
-            <Friends friends={props.friends}/>
+            {/* <Friends friends={props.friends}/> */}
 
         </div>
     );

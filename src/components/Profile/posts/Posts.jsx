@@ -1,10 +1,8 @@
 import React from 'react';
 import Post from './Post';
-import { actionCreator } from '../../../data/Data';
-import { actionCreatorRerender } from '../../../data/Data';
+import { actionCreator, actionCreatorRerender} from '../../../data/profileReducer';
+
 let postText = React.createRef()
-
-
 
 const Posts = (props) => {
 

@@ -10,10 +10,11 @@ import store from './data/Data'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 export let rendering=(Data)=>{
+  console.log(Data)
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <App data={store._Data} dispatch={store.dispatch.bind(store)}/>
+      <App data={Data} dispatch={store.dispatch.bind(store)}/>
     </React.StrictMode>
   </BrowserRouter>
 );

@@ -1,6 +1,8 @@
 import React from 'react';
 import Chats from './ChatBox/Сhats'
 import UserMasseges from './UserMassages/UserMasseges';
+import { actionCreatorSendMassege, actionCreatorRerenderMassege } from '../../data/massagesReducer';
+
 
 let postMassege = React.createRef()
 
@@ -8,11 +10,11 @@ let postMassege = React.createRef()
 const Messages = (props) => {
 
     let rerenderMasseges = ()=>{
-        props.dispatch({type:'RERENDER-MASSEGES', text:postMassege.current.value})
+        props.dispatch(actionCreatorRerenderMassege(postMassege.current.value))
     }
 
     let newPost =()=>{
-        props.dispatch({type:'SEND-MASSEGE'})
+        props.dispatch(actionCreatorSendMassege)
         postMassege.current.value=''
     }
     return (

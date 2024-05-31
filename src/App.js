@@ -10,7 +10,9 @@ function App(props) {
   return (
     <div className='container'>
       <Header/>
-      <NavBar friends={props.data.NavBarPart.friends}/>
+      <NavBar 
+      // friends={props.data.NavBarPart.friends}
+      />
       <Routes>
         <Route path='/'element={<Profile dispatch={props.dispatch} ProfilePage={props.data.ProfilePage} newPostText={props.data.ProfilePage.newPostText} />}/>
         <Route path='/profile' element={<Profile dispatch={props.dispatch} newPostText={props.data.ProfilePage.newPostText} ProfilePage={props.data.ProfilePage} />}/>
