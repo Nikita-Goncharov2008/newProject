@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
-import store from './data/Data'
+import store from './data/Store.js'
 
 
 
@@ -22,6 +22,6 @@ root.render(
 
 rendering(store.getState())
 
-store.subscribe(rendering)   
+store.subscribe(()=>{rendering(store.getState())})   
 
 reportWebVitals();

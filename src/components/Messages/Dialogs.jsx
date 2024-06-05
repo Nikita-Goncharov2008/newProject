@@ -13,8 +13,9 @@ const Messages = (props) => {
         props.dispatch(actionCreatorRerenderMassege(postMassege.current.value))
     }
 
-    let newPost =()=>{
-        props.dispatch(actionCreatorSendMassege)
+    let newPost =(e)=>{
+        e.preventDefault()
+        props.dispatch(actionCreatorSendMassege())
         postMassege.current.value=''
     }
     return (

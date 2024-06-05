@@ -10,7 +10,8 @@ const Posts = (props) => {
         props.dispatch(actionCreatorRerender(postText.current.value))
     }
 
-    function inovation(){
+    function inovation(e){
+        e.preventDefault()
         if(postText.current.value!==''){
             props.dispatch(actionCreator())
                 postText.current.value=''

@@ -1,15 +1,22 @@
 const MAKE_POST ="MAKE-POST"
 const INPUT_CHANGE="INPUT-CHANGE"
-
-function ProfileReducer(state, action){
-    if(action.type==='MAKE-POST'){
+let obj = {
+    newPostText:'hello',
+                postProp:[
+                    {name:'tolya', text:'hello'},
+                    {name:'glasha', text:'hello, how are you'},
+                    {name:'kiril', text:'fine'}
+                ],
+}
+function ProfileReducer(state = obj, action){
+    if(action.type===MAKE_POST){
         let newPosts={
             name:'User Name ',text:state.newPostText
         }
         state.postProp.unshift(newPosts)
         state.newPostText=''
         console.log(state.postProp)
-    }else if(action.type==='INPUT-CHANGE'){
+    }else if(action.type===INPUT_CHANGE){
         state.newPostText = action.text
     }
 

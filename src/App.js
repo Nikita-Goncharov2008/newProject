@@ -7,6 +7,7 @@ import { Route, Routes } from 'react-router-dom';
 // import Massage from './components/Messages/UserMassages/Massage';
 
 function App(props) {
+  console.log(props)
   return (
     <div className='container'>
       <Header/>
